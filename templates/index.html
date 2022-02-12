@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/images/favicon.png" type="image/x-icon" sizes="32x32">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <title>Flask-auth</title>
+</head>
+<body>
+    <img src="../static/images/logo-light.png" alt="logo">
+    <br>
+    <form action="greet" method="post">
+        {% for message in get_flashed_messages()%}
+            <p> {{message}} </p>
+        {% endfor %}
+        <br>
+        <input type="text" name="name_input" placeholder="">
+        <br>
+        <input type="submit" value="Submit" id="greet">
+    </form>
+</body>
+</html>
